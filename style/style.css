@@ -170,10 +170,62 @@ body{
   100% { opacity: 0; }
 }
 
-.sterren1 div {
-  animation: star1 .8s linear infinite;
+section div {
+  animation: star1 5.8s linear infinite;
 }
 
 .sterren2 div {
-  animation: star2 .8s linear infinite;
+  animation: star2 5.8s linear infinite;
+}
+
+.vuurpijl {
+	width: 1em;
+	aspect-ratio: 1/1;
+	background-color: red;
+	
+	box-shadow:
+		-1em 1em 0 red,
+		0 1em 0 red,
+		1em 1em 0 red,
+    -2em 2em 0 red,
+		-1em 2em 0 red,
+		0 2em 0 red,
+    1em 2em 0 red,
+		2em 2em 0 red,
+    -2em 3em 0 red,
+		-1em 3em 0 red,
+		0 3em 0 red,
+    1em 3em 0 red,
+		2em 3em 0 red,
+  
+    -1em 4em 0 white,
+    0em 4em 0 red,
+    1em 4em 0 red,
+    -1em 5em 0 red,
+    0em 5em 0 red,
+    1em 5em 0 white,
+    -1em 6em 0 red,
+    0em 6em 0 white,
+    1em 6em 0 white,
+   -1em 7em 0 white,
+    0em 7em 0 red,
+    1em 7em 0 red,
+    -1em 8em 0 red,
+    0em 8em 0 red,
+    1em 8em 0 white,
+    -1em 9em 0 red,
+    0em 9em 0 white,
+    1em 9em 0 white,
+    -1em 10em 0 white,
+    0em 10em 0 red,
+    1em 10em 0 red,
+  
+    0em 11em 0 black,
+    1em 12em 0 black,
+    2em 12em 0 black,
+    3em 11em 0 black,
+    4em 10em 0 black,
+    5em 10em 0 black;
+
+    transform: scale(.5);
 }
