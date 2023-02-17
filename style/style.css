@@ -228,4 +228,9 @@ section div {
     5em 10em 0 black;
 
     transform: scale(.5);
+
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    margin: auto;
 }
