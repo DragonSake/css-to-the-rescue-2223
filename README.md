@@ -26,6 +26,7 @@ Ik ben wel trots dat ik iets heb gemaakt wat ik in mijn hoofd had en veel heb ge
 
 * De lijn met een radial-gradient
 * Verschillende knoppen voor verschillende vuurwerk
+* Knop dat verandert van start/stop als erop is gedrukt
 * Geluid
 
 ***
