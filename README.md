@@ -20,6 +20,8 @@ Daarnaast was het ook lastig om elk vuurwerk te stylen, plaatsen en te animeren.
 
 Ik ben wel trots dat ik iets heb gemaakt wat ik in mijn hoofd had en veel heb geleerd.
 
+***
+
 ### Wat zou ik nog willen toevoegen als ik meer tijd had?
 
 * De lijn met een radial-gradient
