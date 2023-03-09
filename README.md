@@ -4,7 +4,7 @@
 
 ## Week 4 afronding
 
-### Het uiteindelijke resultaat als plaatje. Hiernaast kan je het vinden als link -->
+### Het uiteindelijke resultaat als plaatje. Hiernaast kan je het vinden als link --> ^
 
 ![Dev](https://user-images.githubusercontent.com/40611000/224038160-1b170e8f-d75e-4464-a76d-a86a8c53e746.PNG)
 
