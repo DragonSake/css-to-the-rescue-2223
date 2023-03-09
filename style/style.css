@@ -238,7 +238,7 @@ body > div:nth-child(4)::before {
   top: 35em;
   left: 0.75em;
 	aspect-ratio:1;
-	background-color: var(--pink);
+	background-color: var(--blue);
 	transition:1s;
   opacity: 0;
 }
@@ -253,7 +253,7 @@ body > div:nth-child(9)::before {
   top: 50em;
   left: 15em;
 	aspect-ratio:1;
-	background-color: var(--pink);
+	background-color: var(--blue);
 	transition:1s;
   opacity: 0;
 }
