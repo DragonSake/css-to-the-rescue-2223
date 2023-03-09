@@ -7,6 +7,7 @@
 :root{
   --pink: #FF008C;
   --orange: orange;
+  --or: orangered;
   --yellow: #FFFA00;
   --blue: #00DDFF;
   --purple: #9800FF;
@@ -15,338 +16,633 @@
   --night: #001229;
 }
 
+/* Achtergrond */
 body{
 background-image: linear-gradient(180deg, var(--night), var(--day));
 height: 100vh;
+overflow: hidden;
 }
 
-
-section:first-of-type div{
-width: .1em;
-aspect-ratio: 1;
-background-color: var(--white);
-border-radius: 50%;
+/* Directe kind */
+body > div {
+	width:20em;
+	aspect-ratio:1;
+	display:grid;
+	place-items:center;
 }
 
-section:nth-of-type(2) div{
-width: .1em;
-aspect-ratio: 1;
-background-color: var(--white);
-border-radius: 50%;
+/* Explosie pad */
+div > div {
+	position:absolute;
+	height:100%;
+	width:1%;
+	display:grid;
+	place-items:center;
+	overflow:hidden;
+  /* background-color: blue;  */
 }
 
-section:first-of-type div:first-of-type{
-position: absolute;
-top: 10em;
-left: 10em;
+/* Explosie pad angle */
+div:nth-of-type(1) {
+	rotate: 0deg;
+}
+ 
+div > div:nth-of-type(2) {
+	rotate: 30deg;
 }
 
-section:first-of-type div:nth-of-type(2){
-position: absolute;
-top: 20em;
-left: 40em;
+div > div:nth-of-type(3) {
+	rotate: 60deg;
 }
 
-section:first-of-type div:nth-of-type(3){
-position: absolute;
-top: 10em;
-left: 80em;
+div > div:nth-of-type(4) {
+	rotate: 90deg;
 }
 
-section:first-of-type div:nth-of-type(4){
-position: absolute;
-top: 10em;
-left: 52em;
-width: .2em;
+div > div:nth-of-type(5) {
+	rotate: 120deg;
 }
 
-section:first-of-type div:nth-of-type(5){
-position: absolute;
-top: 30em;
-left: 30em;
-width: .2em;
+div > div:nth-of-type(6) {
+	rotate: 150deg;
 }
 
-section:first-of-type div:nth-of-type(6){
-position: absolute;
-top: 35em;
-left: 80em;
-width: .2em;
+/* Nummer 1 explosie 1 */
+body > div:nth-child(1) {
+	position:absolute;
+  left: 1em;
+  top: 15em;
 }
 
-section:first-of-type div:nth-of-type(7){
-position: absolute;
-top: 25em;
-left: 65em;
-width: .09em;
+/* Nummer 2 lijn 1 */
+body > div:nth-child(2) {
+	position:absolute;
+  left: 10.7em;
+  place-items: end;
 }
 
-section:first-of-type div:nth-of-type(8){
-position: absolute;
-top: 20em;
-left: 20em;
-width: .09em;
+/* Nummer 3 explosie 2 */
+body > div:nth-child(3) {
+	position:absolute;
+  left: 15em;
+  top: 5em;
 }
 
-section:first-of-type div:nth-of-type(9){
-position: absolute;
-top: 35em;
-left: 10em;
-width: .09em;
+/* Nummer 4 lijn 2 */
+body > div:nth-child(4) {
+	position:absolute;
+  left: 24em;
+  place-items: end;
 }
 
-section:first-of-type div:nth-of-type(10){
-position: absolute;
-top: 30em;
-left: 50em;
-width: .09em;
+/* Nummer 5 single 1 */
+body > div:nth-child(5) {
+	position:absolute;
+  top: 20em;
+  left: 30em;
+}
+
+/* Nummer 6 explosie 1.2 */
+body > div:nth-child(6) {
+	position:absolute;
+  top: 10em;
+  left: 50em;
+}
+
+/* Nummer 7 lijn 1.2 */
+body > div:nth-child(7) {
+	position:absolute;
+  left: 59.7em;
+  display:grid;
+  top: 0;
+	place-items: end;
+}
+
+/* Nummer 8 explosie 2.2 */
+body > div:nth-child(8) {
+	position:absolute;
+  left: 65em;
+  top: 20em;
+}
+
+/* Nummer 9 lijn 2.2 */
+body > div:nth-child(9) {
+	position:absolute;
+  left: 59.7em;
+  display:grid;
+  top: 0;
+	place-items: end;
+}
+
+/* Nummer 5 single 2 */
+body > div:nth-child(10) {
+	position:absolute;
+  left: 60em;
+  place-items: end;
+}
+
+/* Nummer 1 + 6 explosie 1 */
+body > div:nth-child(5n - 4) > div::before {
+	content:"";
+	position:absolute;
+	width:100%;
+	aspect-ratio:1;
+	background-color: var(--pink);
+  transition:1s;
+  opacity: 0;
+}
+
+/* Nummer 1 + 6 explosie 1 */
+body > div:nth-child(5n - 4) > div::after {
+	content:"";
+	position:absolute;
+	width:100%;
+	aspect-ratio:1;
+	background-color: var(--pink);
+	transition:1s;
+  opacity: 0;
+}
+
+/* Nummer 2 + 7 lijn 1 */
+body > div:nth-child(5n - 3) {
+  width: .5em;
+  height: 40em;
 } 
 
-section:nth-of-type(2) div:first-of-type{
-position: absolute;
-top: 15em;
-left: 10em;
+/* Nummer 2 + 7 lijn 1 */
+body > div:nth-child(5n - 3) div {
+	position:absolute;
+	height:10%;
+	width: .2em;
+	overflow:hidden;
 }
 
-section:nth-of-type(2) div:nth-of-type(2){
-position: absolute;
-top: 20em;
-left: 55em;
+/* Nummer 2 + 7 lijn 1 */
+body > div:nth-child(5n - 3)::before {
+  content:"";
+	position:absolute;
+	display:block;
+	width:.2em;
+  height: 8px;
+	aspect-ratio:1;
+	background-color: var(--pink);
+	transition:1s;
+  opacity: 0;
 }
 
-section:nth-of-type(2) div:nth-of-type(3){
-position: absolute;
-top: 15em;
-left: 80em;
+/* Nummer 3 + 8 explosie 2 */
+body > div:nth-child(5n - 2) > div::before {
+	content:"";
+	position:absolute;
+	width:100%;
+	aspect-ratio:1;
+	background-color: var(--blue);
+  transition:1s;
+  opacity: 0;
+  border-radius: 10px;
 }
 
-section:nth-of-type(2) div:nth-of-type(4){
-position: absolute;
-top: 10em;
-left: 45em;
-width: .2em;
+/* Nummer 3 + 8 explosie 2 */
+body > div:nth-child(5n - 2) > div::after {
+	content:"";
+	position:absolute;
+	width:100%;
+	aspect-ratio:1;
+	background-color: var(--blue);
+	transition:1s;
+  opacity: 0;
+  border-radius: 10px;
 }
 
-section:nth-of-type(2) div:nth-of-type(5){
-position: absolute;
-top: 35em;
-left: 20em;
-width: .2em;
-}
-
-section:nth-of-type(2) div:nth-of-type(6){
-position: absolute;
-top: 25em;
-left: 75em;
-width: .2em;
-}
-
-section:nth-of-type(2) div:nth-of-type(7){
-position: absolute;
-top: 25em;
-left: 25em;
-width: .09em;
-}
-
-section:nth-of-type(2) div:nth-of-type(8){
-position: absolute;
-top: 30em;
-left: 35em;
-width: .09em;
-}
-
-section:nth-of-type(2) div:nth-of-type(9){
-position: absolute;
-top: 38em;
-left: 50em;
-width: .09em;
-}
-
-section:nth-of-type(2) div:nth-of-type(10){
-position: absolute;
-top: 35em;
-left: 70em;
-width: .09em;
-}
-
-@keyframes star1 {
-0% { opacity: 1; }
-50% { opacity: 0; }
-100% { opacity: 1; }
-}
-
-@keyframes star2 {
-0% { opacity: 0; }
-50% { opacity: 1; }
-100% { opacity: 0; }
-}
-
-section:first-of-type div {
-animation: star1 3s linear infinite;
-}
-
-section:nth-of-type(2) div {
-animation: star2 3s linear infinite;
-}
-
-/* .vuurpijl {
-width: .25em;
-aspect-ratio: 1;
-background-color: red;
-position: absolute;
-bottom: 50px;
-left: 50%;
-margin: auto; */
-
-/* box-shadow:
-  -.25em .25em 0 red,
-  0 .25em 0 red,
-  .25em .25em 0 red,
-  -.25em .5em 0 red,
-  -.5em .5em 0 red,
-  0 .5em 0 red,
-  .25em .5em 0 red,
-  .5em .5em 0 red,
-  -.5em .75em 0 red,
-  -.25em .75em 0 red,
-  0 .75em 0 red,
-  .25em .75em 0 red,
-  .5em .75em 0 red,
-
-  -.25em 1em 0 white,
-  0em 1em 0 red,
-  .25em 1em 0 red,
-  -.25em 1.25em 0 red,
-  0em 1.25em 0 red,
-  .25em 1.25em 0 white,
-  -.25em 1.5em 0 red,
-  0em 1.5em 0 white,
-  .25em 1.5em 0 white,
- -.25em 1.75em 0 white,
-  0em 1.75em 0 red,
-  .25em 1.75em 0 red,
-  -.25em 2em 0 red,
-  0em 2em 0 red,
-  .25em 2em 0 white,
-  -.25em 2.25em 0 red,
-  0em 2.25em 0 white,
-  .25em 2.25em 0 white,
-  -.25em 2.5em 0 white,
-  0em 2.5em 0 red,
-  .25em 2.5em 0 red;
-} */
-
-/* .staart{
-width: .25em;
-aspect-ratio: 1;
-background-color: red;
-position: absolute;
-bottom:45px;
-left: 50%;
-margin: auto;
-
-box-shadow:
-0em 2.5em 0 black,
-.25em 2.75em 0 black,
-.5em 2.75em 0 black,
-.75em 2.75em 0 black,
-1em 2.5em 0 black,
-1.25em 2.5em 0 black;
-} */
-
-/* @keyframes omhoog {
-0% { transform: translate(0, 0em); }
-100% { transform: translate(0, -20em); }
-} */
-
-/* body:has(#start:checked) .vuurpijl{
-animation: omhoog 1s linear 1;
-}
-
-body:has(#start:checked) .staart{
-animation: omhoog 1s linear 1;
-} */
-
-
-/* 
-label:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 4px 0px currentColor;
-  cursor:pointer;
+/* Nummer 4 + 9 lijn 2 */
+body > div:nth-child(5n - 1) {
+  width: .5em;
+  height: 40em;
 } 
 
-main:has(>input:first-of-type:checked) > label {
-  filter: grayscale(1) opacity(0.5);
+/* Nummer 4 + 9 lijn 2 */
+body > div:nth-child(5n - 1) div {
+	position:absolute;
+	height:10%;
+	width: .2em;
+	overflow:hidden;
 }
 
-/* Checkbox weghalen */
- /* input {
-  display: none;
-} */ 
-
-/* main:has(>input:first-of-type:checked) > label:hover {
-  transform:unset;
-  box-shadow:unset;
-  cursor:unset;
-  pointer-events:none;
-}
-
-main label:first-of-type {
-  position: absolute;
+/* Nummer 4 lijn 2 */
+body > div:nth-child(4)::before {
+  content:"";
+	position:absolute;
+	display:block;
+	width:.2em;
+  height: 8px;
   top: 35em;
-  left: 43em;
+  left: 0.75em;
+	aspect-ratio:1;
+	background-color: var(--pink);
+	transition:1s;
+  opacity: 0;
+}
+
+/* Nummer 9 lijn 2 */
+body > div:nth-child(9)::before {
+  content:"";
+	position:absolute;
+	display:block;
+	width:.2em;
+  height: 8px;
+  top: 50em;
+  left: 15em;
+	aspect-ratio:1;
+	background-color: var(--pink);
+	transition:1s;
+  opacity: 0;
+}
+
+/* Single 1 + 2 */
+body > div:nth-child(5n) > div::after {
+	content:"";
+	position:absolute;
+	width:100%;
+	aspect-ratio:1;
+	background-color: var(--yellow);
+	transition:1s;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+/* Single 1 + 2 */
+body > div:nth-child(5n) > div::before {
+	content:"";
+	position:absolute;
+	width:100%;
+	aspect-ratio:1;
+	background-color: var(--yellow);
+  transition:1s;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+/* Animaties */
+
+/* Nummer 1 explosie 1 */
+@keyframes boom1 {
+0% { transform: translate(0, 0); opacity: 1;}
+30% { transform:translateY(-3200%) scaleY(10);
+      background-color: var(--purple);
+      opacity: 0;} 
+100% { transform:translateY(-3200%) scaleY(10);
+       background-color: var(--purple);
+       opacity: 0;}   
+}
+
+/* Nummer 1 explosie 1 */
+@keyframes boom2{
+  0% { transform: translate(0, 0); opacity: 1;}
+  30% { transform:translateY(3200%)  scaleY(10);
+        background-color: var(--purple); opacity: 0;}
+  100% { transform:translateY(3200%)  scaleY(10);
+         background-color: var(--purple); opacity: 0;}
+}
+
+/* Nummer 2 + 7 lijn 1 */
+@keyframes lijntje {
+  0% { transform: translate(0, 0); opacity: 1;}
+  20% { transform:translateY(-3200%) scaleY(10);
+    background-color: var(--pink);
+    opacity: 0;}
+  100% { transform: translate(0, 0); opacity: 0;}
+  }
+
+/* Nummer 6 explosie 1.2 */
+@keyframes boom12 {
+  0% { transform: translate(0, 0); opacity: 1;}
+  50% { transform:translateY(-3200%) scaleY(10);
+        background-color: var(--or); opacity: 0;} 
+  100% { transform:translateY(-3200%) scaleY(10);
+         background-color: var(--or); opacity: 0;}   
+  }
+  
+/* Nummer 6 explosie 1.2 */
+  @keyframes boom22{
+    0% { transform: translate(0, 0); opacity: 1;}
+    50% { transform:translateY(3200%)  scaleY(10);
+          background-color: var(--or); opacity: 0;}
+    100% { transform:translateY(3200%)  scaleY(10);
+           background-color: var(--or); opacity: 0;}
+  }
+
+/* Nummer 3 explosie 2 */
+@keyframes boom3{
+  0% { transform: translate(0, 0); opacity: 1;}
+  30% { transform:translateY(-3000%); opacity: 0;
+        background-color: var(--purple);}
+100% { transform:translateY(-3000%); opacity: 0;
+         background-color: var(--purple);}
+}
+
+/* Nummer 3 explosie 2 */
+@keyframes boom4{
+  0% { transform: translate(0, 0); opacity: 1;}
+  30% { transform:translateY(3000%); opacity: 0;
+        background-color: var(--purple);}
+  100% { transform:translateY(3000%); opacity: 0;
+          background-color: var(--purple);}
+}
+
+@keyframes lijntje2 {
+  0% { transform: translate(0, 0); opacity: 1;}
+  20% { transform:translateY(-3200%) scaleY(10);
+    background-color: var(--blue);
+    opacity: 0;}
+  30% { transform: translate(0, 0); opacity: 0;}
+  100% { transform: translate(0, 0); opacity: 0;}
+  }
+
+/* Nummer 5 single 1 */
+@keyframes boom5{
+  0% { transform: translate(0, 0); opacity: 0;}
+  20% { transform: translate(0, 0); opacity: 0;}
+  100% { transform:translateY(-3000%);opacity: 1;}
+}
+
+/* Nummer 5 single 1 */
+@keyframes boom6{
+  0% { transform: translate(0, 0); opacity: 0;}
+  20% { transform: translate(0, 0); opacity: 0;}
+  100% { transform:translateY(3000%);opacity: 1;}
+}
+
+/* Oproepen van de animatie */
+body:has(:checked) > div:nth-child(1) div::before {
+  animation: boom1 2s ease-out infinite;
+  animation-delay: .5s;
+}
+
+body:has(:checked) > div:nth-child(1) div::after {
+  animation: boom2 2s ease-out infinite;
+  animation-delay: .5s;
+}
+
+body:has(:checked) > div:nth-child(2)::before {
+  animation: lijntje 2s ease-in infinite;
+}
+
+body:has(:checked) > div:nth-child(3) div::before {
+  animation: boom3 2s ease-out infinite;
+  animation-delay: 1.5s;
+}
+
+body:has(:checked) > div:nth-child(3) div::after {
+  animation: boom4 2s ease-out infinite;
+  animation-delay: 1.5s;
+}
+
+body:has(:checked) > div:nth-child(4)::before {
+  animation: lijntje2 2s ease-in infinite;
+  animation-delay: 1s;
+}
+
+body:has(:checked) > div:nth-child(5) div::before {
+  animation: boom5 2s ease-out infinite;
+  animation-delay: .5s;
+}
+
+body:has(:checked) > div:nth-child(5) div::after {
+  animation: boom6 2s ease-out infinite;
+  animation-delay: .5s;
+}
+
+body:has(:checked) > div:nth-child(6) div::before {
+  animation: boom12 2s ease-out infinite;
+  animation-delay: 1s;
+}
+
+body:has(:checked) > div:nth-child(6) div::after {
+  animation: boom22 2s ease-out infinite;
+  animation-delay: 1s;
+}
+
+body:has(:checked) > div:nth-child(7)::before {
+  animation: lijntje 2s ease-in infinite;
+  animation-delay: .5s;
+}
+
+body:has(:checked) > div:nth-child(8) div::before {
+  animation: boom3 2s ease-out infinite;
+  animation-delay: 2s;
+}
+
+body:has(:checked) > div:nth-child(8) div::after {
+  animation: boom4 2s ease-out infinite;
+  animation-delay: 2s;
+}
+
+body:has(:checked) > div:nth-child(9)::before {
+  animation: lijntje2 2s ease-in infinite;
+  animation-delay: 1.5s;
+}
+
+body:has(:checked) > div:nth-child(10) div::before {
+  animation: boom5 2.5s ease-out infinite;
+  animation-delay: 1s;
+}
+
+body:has(:checked) > div:nth-child(10) div::after {
+  animation: boom6 2.5s ease-out infinite;
+  animation-delay: 1s;
+}
+
+/* Checkbox styling*/
+input{
+  display: none;
+}
+
+label{
+  position: absolute;
+  top: 75%;
+  left: 45%;
+  width: 7em;
   padding: 1em;
-  width: 6em;
   background: linear-gradient(
     0deg,
     var(--yellow),
     var(--orange)
   );
-  color: rgb(255, 85, 0);
-  border: .1em solid rgb(255, 85, 0);
+  border-radius: 50px;
+  color: var(--or);
+  border: .1em solid var(--or);
   text-align: center;
   font-weight: 700;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border-radius: 1.5em;
-  transition: .5s;
-} */
-
-section:nth-of-type(3) div{
-  width: 1em;
-  height: 15em;
-  aspect-ratio: 1;
-
-  position: absolute;
-  bottom: 0;
-  left: 20em;
-
-  background-image:
-    radial-gradient(
-			var(--pink) 20%,
-			transparent 21%
-  );
-
-  background-size: 2em 2em;
-  background-position: center;
 }
 
-section:nth-of-type(4) div{
-  width: 1em;
-  height: 18em;
-  aspect-ratio: 1;
+body:has(>input:checked) > label {
+  filter: grayscale(1) opacity(0.5);
+}
 
+/* Sterren in de achtergrond positionerens */
+section:first-of-type div{
+  width: .1em;
+  aspect-ratio: 1;
+  background-color: var(--white);
+  border-radius: 50%;
+  }
+  
+  section:nth-of-type(2) div{
+  width: .1em;
+  aspect-ratio: 1;
+  background-color: var(--white);
+  border-radius: 50%;
+  }
+  
+  section:first-of-type div:first-of-type{
   position: absolute;
-  bottom: 0;
+  top: 10em;
+  left: 10em;
+  }
+  
+  section:first-of-type div:nth-of-type(2){
+  position: absolute;
+  top: 20em;
+  left: 40em;
+  }
+  
+  section:first-of-type div:nth-of-type(3){
+  position: absolute;
+  top: 10em;
+  left: 80em;
+  }
+  
+  section:first-of-type div:nth-of-type(4){
+  position: absolute;
+  top: 10em;
+  left: 52em;
+  width: .2em;
+  }
+  
+  section:first-of-type div:nth-of-type(5){
+  position: absolute;
+  top: 30em;
+  left: 30em;
+  width: .2em;
+  }
+  
+  section:first-of-type div:nth-of-type(6){
+  position: absolute;
+  top: 35em;
+  left: 80em;
+  width: .2em;
+  }
+  
+  section:first-of-type div:nth-of-type(7){
+  position: absolute;
+  top: 25em;
   left: 65em;
-
-  background-image:
-    radial-gradient(
-			var(--pink) 20%,
-			transparent 21%
-  );
-
-  background-size: 2em 2em;
-  background-position: center;
-
-
-}
+  width: .09em;
+  }
+  
+  section:first-of-type div:nth-of-type(8){
+  position: absolute;
+  top: 20em;
+  left: 20em;
+  width: .09em;
+  }
+  
+  section:first-of-type div:nth-of-type(9){
+  position: absolute;
+  top: 35em;
+  left: 10em;
+  width: .09em;
+  }
+  
+  section:first-of-type div:nth-of-type(10){
+  position: absolute;
+  top: 30em;
+  left: 50em;
+  width: .09em;
+  } 
+  
+  section:nth-of-type(2) div:first-of-type{
+  position: absolute;
+  top: 15em;
+  left: 10em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(2){
+  position: absolute;
+  top: 20em;
+  left: 55em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(3){
+  position: absolute;
+  top: 15em;
+  left: 80em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(4){
+  position: absolute;
+  top: 10em;
+  left: 45em;
+  width: .2em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(5){
+  position: absolute;
+  top: 35em;
+  left: 20em;
+  width: .2em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(6){
+  position: absolute;
+  top: 25em;
+  left: 75em;
+  width: .2em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(7){
+  position: absolute;
+  top: 25em;
+  left: 25em;
+  width: .09em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(8){
+  position: absolute;
+  top: 30em;
+  left: 35em;
+  width: .09em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(9){
+  position: absolute;
+  top: 38em;
+  left: 50em;
+  width: .09em;
+  }
+  
+  section:nth-of-type(2) div:nth-of-type(10){
+  position: absolute;
+  top: 35em;
+  left: 70em;
+  width: .09em;
+  }
+  
+  /* Animatie van de sterren */
+  @keyframes star {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+  
+  /* Oproepen van de animatie */
+  section:first-of-type div {
+  animation: star 3s linear infinite;
+  }
+  
+  section:nth-of-type(2) div {
+  animation: star 3s linear infinite;
+  animation-delay: 1s;
+  }
